@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="wrapper-home">
+        <nav id="navbar">
+            <div class="profile">
+                <h5 id="userpro"></h5>
+                <div id="img-box"><img src="./images/user1.png"></div>
+            </div>
+        </nav>
+        <div class="content">
+            <div class="note">
+                <h2>Hello <span id="name"></span>,</h2>
+                <p>Welcome! you've successfully loged in to your dashboard.</p> <br>
+                <p id="ques-p">So what would you like to do?</p>
+                <div class="btn-section">
+                    <div class="btn2">
+                        <a href="#">LOGOUT</a>
+                    </div>
+                    <div class="btn2">
+                        <a href="#dashboard">EXPLORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="dashboard">
+            <div class="card">
+                <div class="header">
+                    <img src="./images/Bell-256.png">
+                    <h3>Notifications</h3>
+                </div>
+                <ul class="noti">
+                    <li><p>New message request</p></li>
+                    <li><p>3 new connections</p></li>
+                    <li><p>Post recommendation</p></li>
+                    <li><p>Task completion</p></li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="header">
+                    <img src="./images/notepad-2-256.png">
+                    <h3>Tasks</h3>
+                </div>
+                <ol class="noti">
+                    <li><p>Update your tasks ✔</p></li>
+                    <li><p>Conference @ 11:00am, today ✔</p></li>
+                    <li><p>Meeting @ 12:30pm, tomorrow</p></li>
+                    <li><p>Complete pending projects</p></li>
+                </ol>
+            </div>
+            <div class="card">
+                <div class="header">
+                    <img src="./images/mail-255.png">
+                    <h3>Messages</h3>
+                </div>
+                <ul class="noti">
+                    <p><details><summary>Jessica Mathew</summary>
+                        <span>Hello my friend, how're you✋?</span>
+                    </details></p>
+                    <p><details><summary>John Doe</summary>
+                        <span>Meeting tomorrow, by 12:30pm.</span>
+                        </details></p>
+                    <p><details><summary>Farouk Umar</summary>
+                        <span>yoo! I'm almost done with that project👍</span>
+                        </details></p>
+                    <p><details><summary>Mum</summary>
+                        <span>How is work my child?</span>
+                        </details></p>
+                </ul>
+            </div>
+            <P class="wmark">&copy; DESIGNED AND DEVELOPED BY UMAR FAROUK</P>
+        </div>
+    </div>
+
+    <script>
+        const btn2 = document.querySelector(".btn2")
+        let displayName = document.getElementById("name")
+        let displayuserName = document.getElementById("userpro")
+        
+        let nme = localStorage.getItem('user')
+        displayName.innerText = nme
+        displayuserName.innerText = nme
+
+        btn2.addEventListener("click", ()=>{
+            window.location.href = ('index.html');
+        })
+    </script>
+</body>
+</html>
